@@ -8,5 +8,4 @@ new Vue({
   render: h => h(AppLayout),
 
   router,
-
 })
