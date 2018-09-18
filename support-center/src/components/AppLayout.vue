@@ -9,15 +9,23 @@
       <div>
         My shirt shop
       </div>
-
     </header>
-  <!-- Menu will be here --> <router-view />
+
+    <NavMenu/>
+
+    <!-- Menu will be here -->
+    <router-view />
+
 </div>
 </template>
 
 <script>
+  import NavMenu from './NavMenu.vue'
     export default {
-        name: "AppLayout"
+        name: "AppLayout",
+      components:{
+          NavMenu,
+      }
     }
 </script>
 
