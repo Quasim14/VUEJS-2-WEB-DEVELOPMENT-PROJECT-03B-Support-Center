@@ -19,8 +19,11 @@
 </template>
 
 <script>
+  import RemoteData from '../mixins/RemoteData'
+
     export default {
       name: "Faq",
+      mixins: [RemoteData],
       data(){
           return{
             questions:[],
@@ -54,6 +57,7 @@
       },
     }
 </script>
+
 
 <style scoped>
 
