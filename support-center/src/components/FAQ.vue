@@ -7,7 +7,7 @@
     </div>
 
     <section class="list">
-      <article v-for="question of questions">
+      <article v-for="question of questionList">
         <h2 v-html="question.title"></h2>
         <p v-html="question.content"></p>
       </article>
@@ -23,10 +23,13 @@
 
     export default {
       name: "Faq",
-      mixins: [RemoteData],
+      mixins: [RemoteData({
+        questionList: 'questions',
+      }),
+      ],
       data(){
           return{
-            questions:[],
+            //questions:[],
             error:null,
             loading: false,
           }
