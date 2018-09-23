@@ -19,7 +19,7 @@
       },
       methods:{
         update(event){
-          this.$emit('input', event.currentTarget.value)
+          this.$emit('update', event.currentTarget.value)
         },
       },
 

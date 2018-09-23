@@ -3,7 +3,7 @@
     <input class="input"
            :class="inputClass"
            :name="name" :type="type"
-           :value.prop="value"
+           :value="text"
            :placeholder="placeholder"
     />
   </div>
@@ -19,7 +19,7 @@
         type: String,
         default: 'text',
       },
-      value:{
+      text:{
         required: true,
       },
       placeholder:{
@@ -37,6 +37,11 @@
           'invalid': this.invalid,
         }
       },
+    },
+
+    model: {
+      prop: 'text',
+      event: 'update',
     },
 
 
