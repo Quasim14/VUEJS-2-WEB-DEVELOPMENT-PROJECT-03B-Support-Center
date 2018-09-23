@@ -12,7 +12,7 @@
         <p v-html="question.content"></p>
       </article>
     </section>
-    <Loading v-if="loading" />
+    <Loading v-if="remoteDataBusy" />
 
   </main>
 
@@ -29,9 +29,9 @@
       ],
       data(){
           return{
-            //questions:[],
             error:null,
-            loading: false,
+            // questions:[],
+            // loading: false,
           }
       },
       created(){
