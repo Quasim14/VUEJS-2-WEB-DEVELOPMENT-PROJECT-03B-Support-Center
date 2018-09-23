@@ -2,7 +2,7 @@
   <main class="faq">
     <h1>Frenquently Asked Questions</h1>
 
-    <div class="error" v-if="error">
+    <div class="error" v-if="hasRemoteErrors">
       Can't load the questions
     </div>
 
@@ -23,31 +23,11 @@
 
     export default {
       name: "Faq",
-      mixins: [RemoteData({
+      mixins:[RemoteData({
         questionList: 'questions',
       }),
       ],
-      data(){
-          return{
-            error:null,
-            // questions:[],
-            // loading: false,
-          }
-      },
-      created(){
-        fetch('http://localhost:3000/questions').then(response =>{
-          if(response.ok){
-            return response.json()
-          }
-          else{
-            return Promise.reject('error')
-          }
-        }).then(result =>{
-          this.questions = result
-        }).catch(e =>{
-          this.error = e
-        })
-      },
+
       async created(){
         this.loading = true
         try{
