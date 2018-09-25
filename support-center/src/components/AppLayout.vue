@@ -1,31 +1,27 @@
 <template>
   <div class="app-layout">
     <header class="header">
-
       <div>
         <img class="img" src="../assets/logo.svg"/>
       </div>
-
       <div>
         My shirt shop
       </div>
     </header>
 
     <NavMenu/>
-
     <!-- Menu will be here -->
     <router-view />
-
-</div>
+  </div>
 </template>
 
 <script>
   import NavMenu from './NavMenu.vue'
     export default {
-        name: "AppLayout",
+      name: "AppLayout",
       components:{
           NavMenu,
-      }
+      },
     }
 </script>
 

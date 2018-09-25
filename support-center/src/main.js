@@ -10,6 +10,10 @@ import VueState from './plugins/state'
 Vue.use(VueFetch,{
   baseUrl: 'http://localhost:3000/'
 })
+
+Vue.use(VueState, state)
+
+
 new Vue({
   el: '#app',
   data: state,

@@ -28,16 +28,16 @@
       }),
       ],
 
-      async created(){
-        this.loading = true
-        try{
-          this.questions = await this.$fetch('questions')
-        }
-        catch(e){
-          this.error = e
-        }
-        this.loading = false
-      },
+      // async created(){
+      //   this.loading = true
+      //   try{
+      //     this.questions = await this.$fetch('questions')
+      //   }
+      //   catch(e){
+      //     this.error = e
+      //   }
+      //   this.loading = false
+      // },
     }
 </script>
 

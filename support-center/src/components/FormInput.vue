@@ -2,8 +2,10 @@
   <div class="row">
     <input class="input"
            :class="inputClass"
-           :name="name" :type="type"
-           :value="text"
+           :name="name"
+           :type="type"
+           :value.prop="text"
+           @input="update"
            :placeholder="placeholder"
     />
   </div>
@@ -11,6 +13,11 @@
 
 <script>
   export default {
+    model: {
+      prop: 'text',
+      event: 'update',
+    },
+
     props: {
       name:{
         type: String,
@@ -39,10 +46,13 @@
       },
     },
 
-    model: {
-      prop: 'text',
-      event: 'update',
+    methods:{
+      update(event){
+        this.$emit('update', event.currentTarget.value)
+      },
     },
+
+
 
 
   }
