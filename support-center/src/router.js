@@ -30,7 +30,7 @@ router.beforeEach((to, from, next) => {
   // TODO
   console.log('to', to.name)
   next()
-  if (to.meta.private && !state.user) {
+  if (to.matched.some(r => r.meta.private) && !state.user) {
     // TODO Redirect to login
     next({
       name: 'login',
@@ -40,7 +40,7 @@ router.beforeEach((to, from, next) => {
     })
     return
   }
-  if (to.meta.guest && state.user) {
+  if (to.matched.some(r => r.meta.guest) && state.user) {
     next({
       name: 'home',
       params:{
