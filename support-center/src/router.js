@@ -27,7 +27,12 @@ router.beforeEach((to, from, next) => {
   next()
   if (to.meta.private && !state.user) {
     // TODO Redirect to login
-    next({ name: 'login' })
+    next({
+      name: 'login',
+      params:{
+        wantedRoute : to.fullPath,
+      }
+    })
     return
   }
 
