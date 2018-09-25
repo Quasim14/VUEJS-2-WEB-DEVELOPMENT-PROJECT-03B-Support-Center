@@ -4,6 +4,7 @@ import Home from './components/Home.vue'
 import FAQ from './components/FAQ.vue'
 import Login from './components/Login.vue'
 import TicketsLayout from './components/TicketsLayout.vue'
+import state from './state'
 
 Vue.use(VueRouter)
 
@@ -19,4 +20,21 @@ const router = new VueRouter({
   routes,
   mode:'history',
 })
+
+router.beforeEach((to, from, next) => {
+  // TODO
+  console.log('to', to.name)
+  next()
+  if (to.meta.private && !state.user) {
+    // TODO Redirect to login
+    next({ name: 'login' })
+    return
+  }
+
+})
+
+
+
+
+
 export default router
