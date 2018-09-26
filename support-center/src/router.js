@@ -8,6 +8,7 @@ import state from './state'
 import Tickets from './components/Tickets.vue'
 import NewTicket from './components/NewTicket.vue'
 import Ticket from './components/Ticket.vue'
+import NotFound from './components/NotFound.vue'
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,7 @@ const routes = [ // Routes will be here
     {path:'new', name: 'new-ticket', component:NewTicket},
     { path: ':id', name: 'ticket', component: Ticket, props: true },
     ]},
+  { path: '*', component: NotFound },
 ]
 
 const router = new VueRouter({
