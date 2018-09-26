@@ -7,6 +7,7 @@ import TicketsLayout from './components/TicketsLayout.vue'
 import state from './state'
 import Tickets from './components/Tickets.vue'
 import NewTicket from './components/NewTicket.vue'
+import Ticket from './components/Ticket.vue'
 
 Vue.use(VueRouter)
 
@@ -19,6 +20,7 @@ const routes = [ // Routes will be here
     children:[
     {path:'', name: 'tickets', component:Tickets},
     {path:'new', name: 'new-ticket', component:NewTicket},
+    { path: ':id', name: 'ticket', component: Ticket, props: true },
     ]},
 ]
 
