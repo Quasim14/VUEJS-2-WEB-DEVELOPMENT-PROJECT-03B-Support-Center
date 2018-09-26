@@ -11,13 +11,16 @@
         v-model="title"
         placeholder="Short description (max 100 chars)"
         maxlength="100"
-        required/>
+        required
+      />
 
       <FormInput
         type="textarea"
         name="description"
         v-model="description"
-        placeholder="Describe your problem in details"/>
+        placeholder="Describe your problem in details"
+        rows="4"
+      />
 
     </SmartForm>
   </div>
