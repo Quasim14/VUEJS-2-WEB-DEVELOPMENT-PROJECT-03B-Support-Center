@@ -7,6 +7,8 @@ import VueFetch,{ $fetch } from './plugins/fetch'
 import state from './state'
 import VueState from './plugins/state'
 import * as filters from './filters'
+
+
 Vue.use(VueFetch,{
   baseUrl: 'http://localhost:3000/'
 })
