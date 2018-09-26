@@ -14,10 +14,11 @@ const routes = [ // Routes will be here
   { path: '/', name: 'home', component: Home },
   { path: '/faq', name: 'faq', component: FAQ },
   { path: '/login', name: 'login', component: Login, meta: { guest: true } },
-  { path: '/tickets', name: 'tickets', component: TicketsLayout, meta: { private: true },
+  { path: '/tickets', component: TicketsLayout,
+    meta: { private: true },
     children:[
     {path:'', name: 'tickets', component:Tickets},
-    {path:'new', name: 'new-tiket', component:NewTicket},
+    {path:'new', name: 'new-ticket', component:NewTicket},
     ]},
 ]
 
